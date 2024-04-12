@@ -8,7 +8,9 @@ const countVowels = (phrase /*este es el phrase que estoy evaluando*/) => {
   //for( inicio, condición para terminar, incremento)
 
   for (let i = 0; i < phraseLength; i++) {
-    let isVowel = vowelsList.test(phrase.charAt(i));
+    let isVowel = vowelsList.test(
+      phrase.charAt(i)
+    ); /*Aquí preguntamos si el caracter seleccionado pertenece a las vocales*/
     if (isVowel) {
       total++;
     }
