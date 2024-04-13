@@ -58,3 +58,50 @@ const canes = [
     5.- Necesitamos una nueva lista con todos los objetos de los canes, pero cambiando el valor de la propiedad "vacunado" a "si || no" ( si el valor viene en true, cambiarlo a "Si", si el valor viene en false, cambiarlo a "No")
     6.- Necesitamos una nueva lista con únicamente el nombre de cada can
 */
+
+let perro = {
+  nombre: "Rocky",
+  tipo: "Perro",
+  edad: 2,
+  vacunado: false,
+  direccion: {
+    calle: "Camino Real",
+    numero: 34,
+    colonia: "Las Palmas",
+    codigoPostal: 78600,
+  },
+};
+
+/*extracción normal (notación de punto)*/
+/*let nombre = perro.nombre
+let tipo = perro.tipo
+let vacunado = perro.vacunado*/
+
+/*destructuración*/
+
+/*
+let { nombre, tipo, vacunado } = perro;
+
+console.log(nombre, tipo, vacunado);
+*/
+
+/*Así modificamos el valor de una propiedad de un objeto literal*/
+
+/*perro.tipo = "can";
+
+console.log(perro);
+
+así agregamos una nueva propiedad a un objeto literal
+perro.owner = "Israel Salinas Martínez";
+console.log(perro);*/
+
+/*operador de propagación, sirve para copiar el contenido de un array o un objeto, e insertarlo en un nuevo array/objeto*/
+let perro2 = { ...perro };
+
+console.log("perro2", perro2);
+
+perro.nombre = "Boris";
+
+console.log(perro);
+
+console.log("perro2 despues de cambiar", perro2);
