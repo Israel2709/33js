@@ -1,6 +1,8 @@
 let data = [
   ["Israel", "Salinas", 34],
-  ["Charles", "Silva", 27][("Naomi", "Lopez", 27)][("David", "Moranchel", 28)],
+  ["Charles", "Silva", 27],
+  [("Naomi", "Lopez", 27)],
+  [("David", "Moranchel", 28)],
 ];
 
 /*
