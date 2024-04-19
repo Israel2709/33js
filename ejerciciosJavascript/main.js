@@ -484,8 +484,6 @@ const movies = [
 /*
 Ejercicios:Crear funciones que cumplan con los siguientes requerimientos:
 
-
-    
    1. Obtener una lista de los géneros sin repetir
    2. Obtener una lista de los nombres de los directores sin repetir
    3. Obtener una lista con únicamente los nombres de los actores protagonistas de todas las películas, sin repetir
@@ -495,17 +493,90 @@ Ejercicios:Crear funciones que cumplan con los siguientes requerimientos:
    7. Obtener una lista de películas películas estrenadas en un rango de años (por ejemplo, entre 2000 - 2010, los valores de los años deben ser dinámicos)
    8. Obtener una lista de películas con base en el país al que pertenecen
    9. Obtener una lista de las películas que no obtuvieron premios Óscar
+*/
+/*
    10. Obtener la cantidad de películas de cada clasficación. Esta información debe estar organizada de la siguiente forma:
         {
             [nombre_de_la_clasificacion]:[cantidad]
         }
         Es decir, la propiedad del objeto resultante deber ser la clasificación, y el valor de esa propiedad debe ser la cantidad de películas que pertenecen a esa clasificación
+*/
+
+/*
     11. Obtener la cantidad de películas de cada país, organizada de la siguiente forma:
         {
             [pais]:[cantidad]
         }
+*/
+
+const organizeMoviesByProperty = (dataArray, propertyName) => {
+  let result = dataArray.reduce((accum, current) => {
+    return accum[current[propertyName]]
+      ? { ...accum, [current[propertyName]]: accum[current[propertyName]] + 1 }
+      : { ...accum, [current[propertyName]]: 1 };
+  }, {});
+  return result;
+};
+
+let organizeByRating = organizeMoviesByProperty(movies, "rating");
+let organizeByCountry = organizeMoviesByProperty(movies, "country");
+let organizeByGenre = organizeMoviesByProperty(movies, "genre");
+
+console.log(organizeByRating);
+console.log(organizeByCountry);
+console.log(organizeByGenre);
+
+/*
     12. Obtener la edad promedio de los actores protagonistas
+*/
+
+/*
+{
+    director: "Edgar Wright",
+    genre: "Acción",
+    country: "Reino Unido",
+    duration: "113 minutos",
+    protagonists: [
+      { name: "Ansel Elgort", age: 23 },
+      { name: "Kevin Spacey", age: 58 },
+    ],
+    releaseYear: 2017,
+    title: "Baby Driver",
+    synopsis:
+      "Un joven conductor de escapadas se ve involucrado en un atraco condenado al fracaso después de ser coaccionado para trabajar para un jefe del crimen.",
+    oscarAwards: 0,
+    rating: "R",
+  },
+*/
+
+const getProtagonistAverageAge = (dataArray) => {
+  let result = dataArray.reduce((accum, current, _, arr) => {
+    let subResult = current.protagonists.reduce((accum, current, _, arr) => {
+      return accum + current.age / arr.length;
+    }, 0);
+    return accum + subResult / arr.length;
+  }, 0);
+  return result;
+};
+
+console.log(getProtagonistAverageAge(movies));
+
+/*
     13. Dado el nombre de un actor, obtener la cantidad de películas de la lista en las que aparece
+*/
+
+const getActorAppearences = (dataArray, actorName) => {
+  let result = dataArray.reduce((accum, current) => {
+    return current.protagonists.some((actor) => actor.name === actorName)
+      ? accum + 1
+      : accum;
+  }, 0);
+  return result;
+};
+
+console.log(getActorAppearences(movies, "Kevin Spacey"));
+
+/*
    14. Obtener una lista que contenga objetos de cada película con el siguiente formato:
     
     {
@@ -515,5 +586,16 @@ Ejercicios:Crear funciones que cumplan con los siguientes requerimientos:
 
     **trimmedSynopsis debe estar limitada a 10 palabras, y debe tener puntos suspensivos al final.
 */
+
+const getShortMoviesObject = (dataArray) => {
+  let result = dataArray.map((movie) => {
+    let { title, synopsis } = movie;
+    let trimmedSynopsis = `${synopsis.split(" ", 10).join(" ")}...`;
+    return { title, trimmedSynopsis };
+  });
+  return result;
+};
+
+console.log(getShortMoviesObject(movies));
 
 /*Happy Hacking Koders!!!*/
