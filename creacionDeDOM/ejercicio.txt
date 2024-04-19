@@ -1,0 +1,8 @@
+Crear una lista de koders, usando el siguiente array:
+
+let koders = [
+    {
+        name:"Israel",
+        lastname:"Salinas Martínez"
+    }
+]
