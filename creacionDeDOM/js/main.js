@@ -1,6 +1,6 @@
 /*Recordar explicar emmet*/
 
-const koders = ["Jair", "Daniel", "Maria", "Natalia", "Isra"];
+const koders = ["Jair", "Daniel", "Maria", "Natalia", "Isra", "Leonardo"];
 
 /*Para crear elementos, tenemos el método document.createElement(tagname)
   recibe como argumento el tag del elemeto que queremos crear, y devuelve un elemento de DOM
