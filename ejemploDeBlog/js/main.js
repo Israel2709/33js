@@ -8,8 +8,8 @@ const blogEntries = [
       "Explorar la cocina italiana va más allá de la pizza y la pasta...",
     rating: 8.75,
     fechaCreacion: "2024-04-18",
-    autor: "Giovanni Rossi",
-    avatar: "https://images.unsplash.com/avatar-1",
+    autor: "Daniel Torres",
+    avatar: "https://randomuser.me/api/portraits/men/38.jpg",
   },
   {
     image: "https://picsum.photos/id/102/200/300",
@@ -21,7 +21,7 @@ const blogEntries = [
     rating: 9.3,
     fechaCreacion: "2024-04-17",
     autor: "Laura Martínez",
-    avatar: "https://images.unsplash.com/avatar-2",
+    avatar: "https://randomuser.me/api/portraits/women/22.jpg",
   },
   {
     image: "https://picsum.photos/id/401/200/300",
@@ -33,7 +33,7 @@ const blogEntries = [
     rating: 7.9,
     fechaCreacion: "2024-04-16",
     autor: "Sofía Hernández",
-    avatar: "https://images.unsplash.com/avatar-3",
+    avatar: "https://randomuser.me/api/portraits/women/5.jpg",
   },
   {
     image: "https://picsum.photos/id/200/200/300",
@@ -44,7 +44,7 @@ const blogEntries = [
     rating: 8.65,
     fechaCreacion: "2024-04-15",
     autor: "Daniel Torres",
-    avatar: "https://images.unsplash.com/avatar-4",
+    avatar: "https://randomuser.me/api/portraits/men/44.jpg",
   },
   {
     image: "https://picsum.photos/id/305/200/300",
@@ -55,8 +55,8 @@ const blogEntries = [
       "Crear un jardín sostenible no solo es beneficioso para el medio ambiente...",
     rating: 9.5,
     fechaCreacion: "2024-04-14",
-    autor: "Isabel Méndez",
-    avatar: "https://images.unsplash.com/avatar-5",
+    autor: "Sofía Hernández",
+    avatar: "https://randomuser.me/api/portraits/women/33.jpg",
   },
   {
     image: "https://picsum.photos/id/180/200/300",
@@ -68,9 +68,11 @@ const blogEntries = [
     rating: 8.2,
     fechaCreacion: "2024-04-13",
     autor: "Miguel Ángel García",
-    avatar: "https://images.unsplash.com/avatar-6",
+    avatar: "https://randomuser.me/api/portraits/men/50.jpg",
   },
 ];
+
+console.log(blogEntries);
 
 /*
 <div class="card blog-card mb-3">
