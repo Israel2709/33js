@@ -1,7 +1,13 @@
 .blog-card{
-    img{
+    &__card-img{
         height: 200px;
         width: 100%;
         object-fit: cover;
+    }
+}
+
+.author-container{
+    &__avatar{
+        width:50px;
     }
 }

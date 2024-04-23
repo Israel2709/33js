@@ -1,6 +1,10 @@
-.blog-card img {
+.blog-card__card-img {
   height: 200px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.author-container__avatar {
+  width: 50px;
 }/*# sourceMappingURL=style.css.map */

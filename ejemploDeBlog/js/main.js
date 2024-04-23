@@ -88,6 +88,17 @@ console.log(blogEntries);
 </div>
 */
 
+const getAuthorsList = (dataArray) => {
+  let result = dataArray.reduce((accum, current) => {
+    let { autor, avatar } = current;
+    let autorObject = { autor, avatar };
+    return accum.find((item) => item.autor === autorObject.autor)
+      ? accum
+      : [...accum, autorObject];
+  }, []);
+  return result;
+};
+
 const createBlogCard = (entryObject) => {
   let { image, title, abstract } = entryObject;
 
@@ -96,6 +107,7 @@ const createBlogCard = (entryObject) => {
 
   let cardImage = document.createElement("img");
   cardImage.setAttribute("src", image);
+  cardImage.classList.add("blog-card__card-img");
 
   let cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
@@ -110,7 +122,9 @@ const createBlogCard = (entryObject) => {
   let cardTextContent = document.createTextNode(abstract);
   cardText.append(cardTextContent);
 
-  cardBody.append(cardTitle, cardText);
+  let cardAuthor = createAuthorElement(entryObject);
+
+  cardBody.append(cardTitle, cardText, cardAuthor);
   card.append(cardImage, cardBody);
 
   return card;
@@ -152,7 +166,41 @@ const printPopularEntries = (popularArray, wrapperId) => {
   });
 };
 
+const separateClassNames = (classNamesString) => classNamesString.split(" ");
+
+const createAuthorElement = (authorObject) => {
+  let { autor, avatar } = authorObject;
+  let authorContainer = document.createElement("div");
+  authorContainer.classList.add(
+    ...separateClassNames(
+      "author-container d-flex align-items-center gap-3 border border-secondary shadow rounded p-3 mb-3"
+    )
+  );
+
+  let avatarImage = document.createElement("img");
+  avatarImage.classList.add(
+    ...separateClassNames("author-container__avatar rounded-circle")
+  );
+  avatarImage.setAttribute("src", avatar);
+
+  let authorHeading = document.createElement("h4");
+  authorHeading.classList.add("m-0");
+  let authorName = document.createTextNode(autor);
+  authorHeading.append(authorName);
+
+  authorContainer.append(avatarImage, authorHeading);
+
+  return authorContainer;
+};
+
+const printUniqueAuthors = (dataArray, wrapperId) => {
+  let wrapper = document.getElementById(wrapperId);
+  dataArray.forEach((item) => wrapper.append(createAuthorElement(item)));
+};
+
 printBlogCards(blogEntries, "main-posts");
+
+printUniqueAuthors(getAuthorsList(blogEntries), "unique-authors");
 
 printPopularEntries(
   blogEntries.filter((entry) => entry.rating > 9),
