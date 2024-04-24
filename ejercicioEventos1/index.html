@@ -16,48 +16,72 @@
       <div class="row">
         <div class="col-6">
           <h3>Selecciona el elemento que quieres ocultar</h3>
-          <ul class="list-group">
+          <select name="" id="">
+            <option value="">option 01</option>
+            <option value="">option 02</option>
+            <option value="">option 03</option>
+            <option value="">option 04</option>
+            <option value="">option 05</option>
+          </select>
+          <div
+            id="test"
+            class="test"
+            data-source-url="some-url"
+            data-custom-attribue="foo"
+          >
+            test
+          </div>
+          <ul class="list-group" data-target>
             <li class="list-group-item">
-              <label for="">Elemento 01</label><input type="checkbox" />
+              <label for="">Elemento 01</label
+              ><input
+                class="control-checkbox"
+                type="checkbox"
+                data-id="some-id"
+              />
             </li>
             <li class="list-group-item">
-              <label for="">Elemento 02</label><input type="checkbox" />
+              <label for="">Elemento 02</label
+              ><input class="control-checkbox" type="checkbox" />
             </li>
             <li class="list-group-item">
-              <label for="">Elemento 03</label><input type="checkbox" />
+              <label for="">Elemento 03</label
+              ><input class="control-checkbox" type="checkbox" />
             </li>
             <li class="list-group-item">
-              <label for="">Elemento 04</label><input type="checkbox" />
+              <label for="">Elemento 04</label
+              ><input class="control-checkbox" type="checkbox" />
             </li>
             <li class="list-group-item">
-              <label for="">Elemento 05</label><input type="checkbox" />
+              <label for="">Elemento 05</label
+              ><input class="control-checkbox" type="checkbox" />
             </li>
           </ul>
         </div>
         <div class="col-6">
           <div class="d-flex gap-3 flex-wrap">
             <div
-              class="p-5 d-flex justify-content-center align-items-center bg-dark text-white"
+              class="target-element p-5 d-flex justify-content-center align-items-center bg-dark text-white"
             >
               Elemento 01
             </div>
             <div
-              class="p-5 d-flex justify-content-center align-items-center bg-primary"
+              class="target-element p-5 d-flex justify-content-center align-items-center bg-primary"
             >
               Elemento 02
             </div>
             <div
-              class="p-5 d-flex justify-content-center align-items-center bg-secondary"
+              class="target-element p-5 d-flex justify-content-center align-items-center bg-secondary"
             >
               Elemento 03
             </div>
             <div
-              class="p-5 d-flex justify-content-center align-items-center bg-success"
+              class="target-element p-5 d-flex justify-content-center align-items-center bg-success"
             >
               Elemento 04
             </div>
             <div
-              class="p-5 d-flex justify-content-center align-items-center bg-warning"
+              class="target-element p-5 d-flex justify-content-center align-items-center bg-warning"
             >
               Elemento 05
             </div>
