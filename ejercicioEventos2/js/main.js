@@ -41,10 +41,10 @@ createPersonButton.addEventListener("click", (event) => {
 });
 
 const createPersonItem = (personObject) => {
-  let { fullname } = personObject;
+  let { fullname, email } = personObject;
   let personListItem = document.createElement("li");
   personListItem.classList.add("list-group-item");
-  let personNameText = document.createTextNode(fullname);
+  let personNameText = document.createTextNode(`${fullname}: ${email}`);
   personListItem.append(personNameText);
   return personListItem;
 };
