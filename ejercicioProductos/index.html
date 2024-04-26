@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous"
+        />
+      </head>
+      <body>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <form
+                id="product-form"
+                action=""
+                class="bg-dark text-white p-3 rounded"
+              >
+                <div class="form-group">
+                  <label for="">Nombre:</label
+                  ><input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    value="Halcón milenario lego"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="">Descripción</label
+                  ><input
+                    type="text"
+                    class="form-control"
+                    name="description"
+                    value="El mejor regalo para el día del maestro ( o mentor... ) "
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="">Imagen</label
+                  ><input
+                    type="text"
+                    class="form-control"
+                    name="picture"
+                    value="https://m.media-amazon.com/images/I/81PhO-kyPuL._AC_UF894,1000_QL80_.jpg"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="">Precio</label
+                  ><input
+                    type="text"
+                    class="form-control"
+                    name="price"
+                    value="5000"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="">Categoría</label
+                  ><input
+                    type="text"
+                    class="form-control"
+                    name="category"
+                    value="Juguetes"
+                  />
+                </div>
+                <button class="btn btn-secondary" id="save-product">
+                  Guardar Producto
+                </button>
+              </form>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="row">
+                <form class="bg-dark text-white p-3 mb-3 d-flex gap-3">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Buscar por Categoría"
+                      id="category-filter"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <select
+                      id="category-select"
+                      class="form-select w-100"
+                      aria-label="Default select example"
+                    ></select>
+                  </div>
+                </form>
+              </div>
+              <div
+                id="product-wrapper"
+                class="row row-cols-1 row-cols-md-2 gap-3"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <script src="js/main.js"></script>
+      </body>
+    </html>
+  </body>
+</html>
